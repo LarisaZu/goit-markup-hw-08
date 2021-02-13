@@ -1,0 +1,32 @@
+.gallery-list {
+  display: flex;
+
+  .item + .item {
+    margin-left: 30px;
+  }
+
+  .item {
+    position: relative;
+  }
+}
+
+.gallery-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  min-height: 70px;
+  background-color: $gallery-overlay-bgc;
+
+  p {
+    font-weight: $weight-bold;
+    line-height: 1.143;
+    color: $primary-white-color;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+}

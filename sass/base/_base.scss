@@ -1,0 +1,78 @@
+body {
+  background-color: $primary-white-color;
+  color: $primary-text-color;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+
+.section {
+  padding-top: 0;
+  padding-bottom: 60px;
+  padding-top: 60px;
+
+  &.no-padding {
+    padding-top: 0;
+    @media screen and (max-width: 1199px) {
+      display: none;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 90px;
+    padding-top: 90px;
+  }
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: $mobil) {
+    width: 480px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 768px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 1200px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+}
+
+.list {
+  // margin-top: 0;
+  // margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.section-title {
+  font-weight: $weight-bold;
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.178;
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 36px;
+    line-height: 1.167;
+    margin-bottom: 50px;
+  }
+}
