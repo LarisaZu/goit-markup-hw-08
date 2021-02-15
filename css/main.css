@@ -166,10 +166,6 @@ img {
   fill: #ffffff;
 }
 
-.footer .social-list {
-  margin-bottom: 60px;
-}
-
 .link-social.into-footer {
   fill: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
@@ -410,11 +406,49 @@ img {
 
 .footer-wrapper {
   text-align: center;
-  /* flex-wrap: wrap; */
+}
+
+@media screen and (min-width: 768px) {
+  .footer-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-wrapper {
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: left;
+  }
 }
 
 .footer a {
   text-decoration: none;
+}
+
+.left-block {
+  margin-bottom: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .left-block {
+    margin-left: 61px;
+    margin-right: 165px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .left-block {
+    margin: 0;
+  }
 }
 
 .address {
@@ -425,7 +459,6 @@ img {
 
 .contacts-list {
   margin-top: 20px;
-  margin-bottom: 60px;
 }
 
 .contacts-list li:not(:last-child) {
@@ -450,11 +483,35 @@ img {
 }
 
 .join {
+  margin-bottom: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .join {
+    margin-bottom: 0;
+  }
+}
+
+.join-title {
   color: #ffffff;
   font-weight: 700;
   line-height: 1.143;
   text-transform: uppercase;
   margin: 0 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .sign-up {
+    min-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .sign-up {
+    margin: 0;
+  }
 }
 
 .sign-up-form input {
@@ -496,6 +553,13 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
+@media screen and (min-width: 1200px) {
+  .sign-up-form input {
+    margin-bottom: 0;
+    width: 358px;
+  }
+}
+
 .sign-up-form .sign-up-btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -509,5 +573,19 @@ img {
   height: 24px;
   background-image: url("../images/icon-telegram.svg");
   margin-left: 10px;
+}
+
+@media screen and (min-width: 1200px) {
+  .sign-up-form .sign-up-btn {
+    margin: 0 0 0 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .sign-up-form {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
 }
 /*# sourceMappingURL=main.css.map */
