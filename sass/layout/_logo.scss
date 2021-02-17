@@ -1,9 +1,8 @@
 .logo {
   display: block;
-  padding-top: 24px;
-  padding-bottom: 25px;
+  padding: 16px 0;
 
-  color: black;
+  color: $primary-text-color;
   font-family: 'Raleway', sans-serif;
   font-weight: $weight-bold;
   font-size: 24px;
@@ -17,9 +16,8 @@
   .footer & {
     padding: 0px;
     color: $primary-white-color;
-
-    .accent {
-      color: $accent-color;
-    }
+  }
+  .accent {
+    color: $accent-color;
   }
 }

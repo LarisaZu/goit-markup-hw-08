@@ -98,26 +98,3 @@
     background-color: $accent-color;
   }
 }
-
-.menu-button {
-  display: inline-flex;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
-    fill: $accent-color;
-  }
-  & .icon-menu-close {
-    display: none;
-  }
-  &.is-open .icon-menu-close {
-    display: block;
-  }
-  &.is-open .icon-menu-open {
-    display: none;
-  }
-}
