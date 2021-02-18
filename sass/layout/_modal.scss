@@ -1,175 +1,203 @@
-// .backdrop {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background-color: $backdrop-bg;
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 94px 15px;
+  overflow-y: scroll;
 
-//   z-index: 1;
-//   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: $backdrop-bg;
 
-//   &.is-hidden {
-//     visibility: hidden;
+  z-index: 20;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-//     z-index: -1;
-//     pointer-events: none;
-//   }
-// }
+  &.is-hidden {
+    visibility: hidden;
 
-// .modal {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   width: 528px;
-//   height: 581px;
-//   border: 1px solid $modal-border-color;
-//   border-radius: 4px;
-//   background-color: $primary-white-color;
-//   padding: 40px;
+    z-index: -20;
+    pointer-events: none;
+  }
+}
 
-//   transform: translate(-50%, -50%) scale(1);
-//   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.modal {
+  max-width: 450px;
+  width: 100%;
+  background-color: $primary-white-color;
+  border-radius: 4px;
+  padding: 40px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
 
-//   .backdrop.is-hidden & {
-//     transform: translate(-50%, -50%) scale(0.5);
-//   }
-// }
+  transform: scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-// .form-title {
-//   font-size: 20px;
-//   line-height: 1.15;
-//   text-align: center;
-//   letter-spacing: 0.03em;
-//   color: $primary-text-color;
-//   padding: 0;
-//   margin: 0 0 12px;
-// }
-// .user-contacts {
-//   margin-bottom: 20px;
-// }
-// .form-field {
-//   display: flex;
-//   flex-direction: column;
+  .backdrop.is-hidden & {
+    transform: scale(0.5);
+  }
 
-//   font-size: 12px;
-//   line-height: 1.167;
-//   letter-spacing: 0.01em;
-//   color: $subtitle-text-color;
+  @media screen and (min-width: $mobil) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-//   margin-bottom: 10px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-//   &:last-child {
-//     margin-bottom: 0;
-//   }
-// }
+    .backdrop.is-hidden & {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    max-width: 528px;
+    height: 581px;
+  }
+}
 
-// .form-label {
-//   margin-bottom: 4px;
-// }
+.form-title {
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+  padding: 0;
+  margin: 0 0 12px;
+}
+.user-contacts {
+  margin-bottom: 20px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
 
-// .wpapper-input {
-//   position: relative;
-// }
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: $subtitle-text-color;
 
-// .form-icon {
-//   position: absolute;
-//   left: 12px;
-//   top: 50%;
-//   transform: translateY(-50%);
+  margin-bottom: 10px;
 
-//   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
 
-//   .form-field:focus-within & {
-//     fill: $accent-color;
-//   }
-// }
+.form-label {
+  margin-bottom: 4px;
+}
 
-// .form-input {
-//   width: 100%;
+.wpapper-input {
+  position: relative;
+}
 
-//   padding: 12px 12px 12px 42px;
-//   border: 1px solid rgba(33, 33, 33, 0.2);
-//   border-radius: 4px;
-//   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.form-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 
-//   .form-field:focus-within & {
-//     outline: transparent;
-//     border: 1px solid $accent-color;
-//     fill: $accent-color;
-//   }
-// }
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-// .form-textarea {
-//   width: 100%;
-//   height: 120px;
-//   padding: 12px 16px;
-//   border: 1px solid rgba(33, 33, 33, 0.2);
-//   border-radius: 4px;
-//   resize: none;
-//   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .form-field:focus-within & {
+    fill: $accent-color;
+  }
+}
 
-//   .form-field:focus-within & {
-//     outline: transparent;
-//     border: 1px solid $accent-color;
-//     fill: $accent-color;
-//   }
+.form-input {
+  width: 100%;
 
-//   &::placeholder {
-//     color: rgba(117, 117, 117, 0.5);
-//   }
-// }
+  padding: 12px 12px 12px 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-// .form-button {
-//   margin-top: 30px;
-// }
+  .form-field:focus-within & {
+    outline: transparent;
+    border: 1px solid $accent-color;
+    fill: $accent-color;
+  }
+}
 
-// // checkbox
-// .check-label {
-//   display: block;
-// }
-// .check-input {
-//   position: absolute;
-//   width: 1px;
-//   height: 1px;
-//   margin: -1px;
-//   border: 0;
-//   padding: 0;
+.form-textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-//   white-space: nowrap;
-//   clip-path: inset(100%);
-//   clip: rect(0 0 0 0);
-//   overflow: hidden;
-// }
-// .check-agreement {
-//   display: flex;
-//   align-items: center;
-//   cursor: pointer;
+  .form-field:focus-within & {
+    outline: transparent;
+    border: 1px solid $accent-color;
+    fill: $accent-color;
+  }
 
-//   &::before {
-//     content: '';
-//     display: inline-flex;
-//     cursor: pointer;
-//     width: 16px;
-//     height: 15px;
-//     background-image: url('../images/check-off.svg');
-//     border-radius: 2px;
+  &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
 
-//     margin-left: 12px;
-//     margin-right: 8px;
-//     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-//       background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
-//   }
-// }
-// .check-input:focus-within + .check-agreement::before {
-//   outline: 2px solid $primary-black-color;
-// }
-// .check-input:checked + .check-agreement::before {
-//   background-image: url('../images/check-on.svg');
-//   background-color: $accent-color;
-// }
+.form-button {
+  margin-top: 30px;
+}
 
-// .agreement-link {
-//   color: $accent-color;
-// }
-// /* / checkbox */
+// checkbox
+.check-label {
+  display: block;
+}
+.check-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.check-agreement {
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.167;
+
+  &::before {
+    content: '';
+    display: inline-flex;
+
+    cursor: pointer;
+    width: 16px;
+    height: 15px;
+    background-image: url('../images/check-off.svg');
+    border-radius: 2px;
+
+    margin-right: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @media screen and (min-width: $desktop) {
+      margin-left: 12px;
+    }
+  }
+  @media screen and (min-width: $mobil) {
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+  }
+}
+.check-input:focus-within + .check-agreement::before {
+  outline: 2px solid $primary-black-color;
+}
+.check-input:checked + .check-agreement::before {
+  background-image: url('../images/check-on.svg');
+  background-color: $accent-color;
+}
+
+.agreement-link {
+  color: $accent-color;
+}
+/* / checkbox */
