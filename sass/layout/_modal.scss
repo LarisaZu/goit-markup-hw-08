@@ -135,6 +135,12 @@
 
   &::placeholder {
     color: rgba(117, 117, 117, 0.5);
+    font-size: 14px;
+    line-height: 1.143;
+    @media screen and (min-width: $desktop) {
+      font-size: 12px;
+      line-height: 1.167;
+    }
   }
 }
 
@@ -143,9 +149,7 @@
 }
 
 // checkbox
-.check-label {
-  display: block;
-}
+
 .check-input {
   position: absolute;
   width: 1px;
@@ -187,6 +191,7 @@
   }
   @media screen and (min-width: $desktop) {
     font-size: 14px;
+    line-height: 1.714;
   }
 }
 .check-input:focus-within + .check-agreement::before {
